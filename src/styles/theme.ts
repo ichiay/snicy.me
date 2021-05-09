@@ -4,8 +4,8 @@ import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 const fonts = {
   ...chakraTheme.fonts,
-  body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
-  heading: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+  body: `"Noto Sans JP", "Noto Sans", "Fira Code" "Hiragino Sans", "ヒラギノ角ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3"`,
+  heading: `"Noto Sans JP", "Noto Sans", "Fira Code" "Hiragino Sans", "ヒラギノ角ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3"`,
 };
 
 const breakpoints = createBreakpoints({
@@ -14,6 +14,16 @@ const breakpoints = createBreakpoints({
   lg: "62em",
   xl: "64em",
 });
+
+const colors = {};
+
+const styles = {
+  global: {
+    body: {
+      color: "#505050",
+    },
+  },
+};
 
 const config: ThemeConfig = {
   ...chakraTheme.config,
@@ -25,6 +35,8 @@ const overrides = {
   ...chakraTheme,
   config,
   fonts,
+  colors,
+  styles,
   breakpoints,
   fontWeights: {
     normal: 300,

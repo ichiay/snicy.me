@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import { parseISO, format } from "date-fns";
 import {
   useColorMode,
@@ -12,6 +11,7 @@ import {
 import { useRouter } from "next/router";
 
 import Container from "../components/Container";
+import Head from "../components/Head";
 import { BlogMeta } from "src/types/blog";
 
 type staticProps = {
@@ -28,9 +28,10 @@ const BlogLayout: React.FC<staticProps> = ({ children, meta }) => {
   const slug = router.asPath.replace("/blog", "");
   return (
     <Container>
-      <Head>
-        <title>${slug} - Shinichi Yamashita :: Blog</title>
+      <Head title={`${meta.slug} | Shinichi Yamashita`} noIndex={meta.draft}>
+        <link rel="canonical" href={"/blog/" + meta.slug} />
       </Head>
+
       <Stack
         as="article"
         spacing={8}

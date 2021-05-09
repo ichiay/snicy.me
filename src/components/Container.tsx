@@ -22,6 +22,11 @@ const Container: React.FC = ({ children }) => {
     dark: "gray.300",
   };
 
+  const navHoverColor = {
+    light: "white",
+    dark: "black",
+  };
+
   const StickyNav = styled(Flex)`
     position: sticky;
     z-index: 10;
@@ -53,7 +58,10 @@ const Container: React.FC = ({ children }) => {
               as="a"
               variant="ghost"
               p={[1, 2, 4]}
-              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+              _hover={{
+                backgroundColor: navHoverBg[colorMode],
+                color: navHoverColor[colorMode],
+              }}
             >
               Blog
             </Button>
@@ -63,7 +71,10 @@ const Container: React.FC = ({ children }) => {
               as="a"
               variant="ghost"
               p={[1, 2, 4]}
-              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+              _hover={{
+                backgroundColor: navHoverBg[colorMode],
+                color: navHoverColor[colorMode],
+              }}
             >
               About
             </Button>

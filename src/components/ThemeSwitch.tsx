@@ -10,6 +10,7 @@ const ThemeSwitch = () => {
   return (
     <IconButton
       aria-label="Toggle dark mode"
+      variant="ghost"
       icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
       onClick={toggleColorMode}
       color={iconColor[colorMode]}

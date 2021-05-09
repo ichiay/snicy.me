@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from "react";
-import Head from "next/head";
 import {
   Heading,
   Flex,
@@ -7,6 +6,8 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Text,
+  Box,
 } from "@chakra-ui/react";
 
 import Container from "../components/Container";
@@ -15,6 +16,7 @@ import BlogTile from "../components/BlogTile";
 import { SearchIcon } from "@chakra-ui/icons";
 import { BlogMeta } from "src/types/blog";
 import { getBlogMetas } from "src/lib/blog/getBlogPosts";
+import Head from "src/components/Head";
 
 type staticProps = {
   metas: BlogMeta[];
@@ -38,13 +40,10 @@ const Index: React.FC<staticProps> = ({ metas }) => {
 
   return (
     <>
-      <Head>
-        <title>Shinichi Yamashita :: Blog</title>
-      </Head>
+      <Head title="Blog | Shinichi Yamashita" />
       <Container>
         <Stack
           as="main"
-          spacing={8}
           justifyContent="center"
           alignItems="flex-start"
           m="0 auto 4rem auto"
@@ -57,10 +56,24 @@ const Index: React.FC<staticProps> = ({ metas }) => {
             maxWidth="700px"
             px={4}
           >
-            <Heading letterSpacing="tight" mb={4} as="h1" size="2xl">
-              Blog ({metas.length} posts)
-            </Heading>
-            <InputGroup mb={4} mr={4} w="100%">
+            <Stack alignItems="center" mb={8} w="100%">
+              <Heading
+                letterSpacing="tight"
+                as="h1"
+                size="4xl"
+                mb={6}
+                fontFamily="Montserrat"
+              >
+                snicy.me
+              </Heading>
+              <Text fontSize="sm" whiteSpace="pre-wrap" align="center">
+                {
+                  "It ’s working, so it ’s okay, I guess so XD\n動いてるからおk、しらんけど XD"
+                }
+              </Text>
+              <Text fontSize="sm"></Text>
+            </Stack>
+            <InputGroup w="100%">
               <Input
                 aria-label="Search by title"
                 placeholder="Search by title"
@@ -70,6 +83,9 @@ const Index: React.FC<staticProps> = ({ metas }) => {
                 <SearchIcon color="gray.300" />
               </InputRightElement>
             </InputGroup>
+            <Text mb={8} align="right" w="100%" px={2} color="#999999">
+              {filteredMetas.length} posts
+            </Text>
             {!filteredMetas.length && "No metas found :("}
             {filteredMetas.map((meta) => (
               <BlogTile key={meta.title} {...meta} />
