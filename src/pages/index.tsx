@@ -40,7 +40,7 @@ const Index: React.FC<staticProps> = ({ metas }) => {
 
   return (
     <>
-      <Head title="Blog | Shinichi Yamashita" />
+      <Head title="snicy.me" />
       <Container>
         <Stack
           as="main"
