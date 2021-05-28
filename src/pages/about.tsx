@@ -55,7 +55,7 @@ const About = () => {
             Shinichi Yamashita (ichi)
           </Heading>
           <Stack isInline>
-            <Link href="https://www.twitch.tv/snicymst" isExternal>
+            <Link href="https://www.twitch.tv/snicyme" isExternal>
               <IconButton
                 variant="ghost"
                 fontSize="28px"
