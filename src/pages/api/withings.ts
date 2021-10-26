@@ -27,13 +27,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const scaleDateObj = toDate(dateNum * 1000);
   const scaleDate = format(scaleDateObj, 'yyyy-MM-dd HH:mm:ss');
 
-  const BMI = round(weightNum / 1.76 / 1.76, 2);
-
   const myHeight = parseFloat(process.env.HEIGHT || '176.5');
   const anchor = process.env.ANCHOR || '2021年8月';
   const anchorWeight = parseFloat(process.env.ANCHOR_WEIGHT || '74.0');
   const targetWeight = parseFloat(process.env.TARGET_WEIGHT || '64.0');
 
+  const BMI = round(weightNum / (myHeight / 100) / (myHeight / 100), 2);
   const weightUpDown = round(weightNum - anchorWeight, 2);
   const targetTo = round(targetWeight - weightNum, 2);
 
