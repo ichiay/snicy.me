@@ -1,11 +1,11 @@
-import React from "react";
-import { ChakraProvider, useColorMode } from "@chakra-ui/react";
-import customTheme from "src/styles/theme";
-import { Global, css } from "@emotion/react";
-import { NextPage } from "next";
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import React from 'react';
+import { ChakraProvider, useColorMode } from '@chakra-ui/react';
+import customTheme from 'src/styles/theme';
+import { Global, css } from '@emotion/react';
+import { NextPage } from 'next';
+import { AppProps } from 'next/dist/shared/lib/router/router';
 
-import { prismLightTheme, prismDarkTheme } from "../styles/prism";
+import Footer from '../components/Footer';
 
 const GlobalStyle: React.FC = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -14,7 +14,6 @@ const GlobalStyle: React.FC = ({ children }) => {
     <>
       <Global
         styles={css`
-          ${colorMode === "light" ? prismLightTheme : prismDarkTheme};
           ::selection {
             background-color: #90cdf4;
             color: #fefefe;
@@ -31,7 +30,7 @@ const GlobalStyle: React.FC = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === "light" ? "white" : "#171717"};
+            background: ${colorMode === 'light' ? 'white' : '#171717'};
           }
         `}
       />
@@ -45,6 +44,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
     <ChakraProvider resetCSS theme={customTheme}>
       <GlobalStyle />
       <Component {...pageProps} />
+      <Footer />
     </ChakraProvider>
   );
 };

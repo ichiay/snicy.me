@@ -1,31 +1,21 @@
 /*eslint-env node*/
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    es2020: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react',
-  ],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2020,
-    sourceType: 'module',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'next',
+    'next/core-web-vitals',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:@next/next/recommended',
+    'prettier',
+  ],
+  env: {
+    es6: true,
+    browser: true,
+    jest: true,
+    node: true,
   },
-  plugins: ['@typescript-eslint', 'react', 'import'],
   settings: {
     'import/resolver': {
       node: {
@@ -38,34 +28,17 @@ module.exports = {
     },
   },
   rules: {
-    '@typescript-eslint/ban-types': [
-      'error',
+    semi: 'error',
+    'import/prefer-default-export': 'off',
+    'newline-before-return': 'error',
+    'no-console': 'off',
+    'no-var': 'error',
+    'import/order': [
+      'warn',
       {
-        types: {
-          '{}': false,
-        },
-      },
-    ],
-    'react/prop-types': ['off'],
-    'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
-    'import/order': ['error'],
-    "semi": ["error", "always"],
-    "semi-spacing": ["error", {"after": true, "before": false}],
-    "semi-style": ["error", "last"],
-    "no-extra-semi": "error",
-    "no-unexpected-multiline": "error",
-    "no-unreachable": "error",
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'all',
-        endOfLine: 'lf',
-        semi: true,
-        singleQuote: true,
-        printWidth: 80,
-        tabWidth: 2,
+        alphabetize: { order: 'asc' },
+        'newlines-between': 'always',
       },
     ],
   },
-}
+};

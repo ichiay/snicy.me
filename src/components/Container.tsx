@@ -1,30 +1,30 @@
-import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
-import NextLink from "next/link";
-import styled from "@emotion/styled";
+import { useColorMode, Button, Flex, Box } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import styled from '@emotion/styled';
 
-import ThemeSwitch from "src/components/ThemeSwitch";
+import ThemeSwitch from 'src/components/ThemeSwitch';
 
 const Container: React.FC = ({ children }) => {
   const { colorMode } = useColorMode();
 
   const bgColor = {
-    light: "white",
-    dark: "#171717",
+    light: 'white',
+    dark: '#171717',
   };
 
   const color = {
-    light: "black",
-    dark: "white",
+    light: 'black',
+    dark: 'white',
   };
 
   const navHoverBg = {
-    light: "gray.600",
-    dark: "gray.300",
+    light: 'gray.600',
+    dark: 'gray.300',
   };
 
   const navHoverColor = {
-    light: "white",
-    dark: "black",
+    light: 'white',
+    dark: 'black',
   };
 
   const StickyNav = styled(Flex)`
@@ -38,38 +38,38 @@ const Container: React.FC = ({ children }) => {
   return (
     <>
       <StickyNav
-        flexDirection="row"
-        justifyContent="space-between"
-        alignItems="center"
-        maxWidth="800px"
-        minWidth="356px"
-        width="100%"
+        flexDirection='row'
+        justifyContent='space-between'
+        alignItems='center'
+        maxWidth='800px'
+        minWidth='356px'
+        width='100%'
         bg={bgColor[colorMode]}
-        as="nav"
+        as='nav'
         px={[2, 6, 6]}
         py={2}
         mt={8}
         mb={[0, 0, 8]}
-        mx="auto"
+        mx='auto'
       >
         <Box>
-          <NextLink href="/" passHref>
+          <NextLink href='/' passHref>
             <Button
-              as="a"
-              variant="ghost"
+              as='a'
+              variant='ghost'
               p={[1, 2, 4]}
               _hover={{
                 backgroundColor: navHoverBg[colorMode],
                 color: navHoverColor[colorMode],
               }}
             >
-              Blog
+              Home
             </Button>
           </NextLink>
-          <NextLink href="/about" passHref>
+          <NextLink href='/about' passHref>
             <Button
-              as="a"
-              variant="ghost"
+              as='a'
+              variant='ghost'
               p={[1, 2, 4]}
               _hover={{
                 backgroundColor: navHoverBg[colorMode],
@@ -83,9 +83,9 @@ const Container: React.FC = ({ children }) => {
         <ThemeSwitch />
       </StickyNav>
       <Flex
-        as="main"
-        justifyContent="center"
-        flexDirection="column"
+        as='main'
+        justifyContent='center'
+        flexDirection='column'
         bg={bgColor[colorMode]}
         color={color[colorMode]}
         px={[0, 4, 4]}
