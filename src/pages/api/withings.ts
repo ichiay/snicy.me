@@ -45,7 +45,7 @@ const getHttpParams = async (
         req.body;
 
       const scaleDate = toDate(
-        isString(date) ? parseInt(date as string) : date * 1000,
+        isString(date) ? parseInt(date as string) * 1000 : date * 1000,
       );
 
       return {
