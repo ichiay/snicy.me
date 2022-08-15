@@ -49,13 +49,13 @@ const About = () => {
         <Stack w='100%' justifyContent='center' alignItems='center' spacing={4}>
           <Avatar src={avaterUrl} size='2xl' />
           <Heading fontFamily='Montserrat' mb={2} size='lg'>
-            ヤマシタシンイチ (いち)
+            ヤマシタシンイチ (いチ)
           </Heading>
           <Heading fontFamily='Montserrat' mb={2} size='md'>
             Shinichi Yamashita (ichi)
           </Heading>
           <Stack isInline>
-            <Link href='https://www.twitch.tv/snicyme' isExternal>
+            <Link href='https://www.twitch.tv/ichiay' isExternal>
               <IconButton
                 variant='ghost'
                 fontSize='28px'
@@ -63,7 +63,7 @@ const About = () => {
                 icon={<FaTwitch />}
               />
             </Link>
-            <Link href='https://twitter.com/snicyme' isExternal>
+            <Link href='https://twitter.com/ichiayay' isExternal>
               <IconButton
                 variant='ghost'
                 fontSize='28px'
@@ -71,7 +71,7 @@ const About = () => {
                 icon={<FaTwitter />}
               />
             </Link>
-            <Link href='https://github.com/snicyme' isExternal>
+            <Link href='https://github.com/ichiay' isExternal>
               <IconButton
                 variant='ghost'
                 fontSize='28px'

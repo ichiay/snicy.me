@@ -23,7 +23,7 @@ const Footer = ({}) => {
         >
           <Box>
             <span>Copyright © 2020-{thisYear} </span>
-            <Link href='https://twitter.com/snicyme'>@snicyme</Link>
+            <Link href='https://twitter.com/ichiayay'>@ichiayay</Link>
             <span>. All Rights Reserved.</span>
           </Box>
         </Flex>
